@@ -50,4 +50,10 @@ export default class Cliente {
     public addPet(pet: Pet){
         this.pets.push(pet)
     }
+    public addProdutoConsumido(produto: Produto){
+        this.produtosConsumidos.push(produto)
+    }
+    public addServicoConsumido(servico: Servico){
+        this.servicosConsumidos.push(servico)
+    }
 }

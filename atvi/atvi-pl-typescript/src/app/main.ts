@@ -5,10 +5,12 @@ import CadastroCliente from "../negocio/cadastroCliente";
 import CadastroPet from "../negocio/cadastroPet";
 import CadastroProduto from "../negocio/cadastroProduto";
 import CadastroServico from "../negocio/cadastroServico";
+import CadastroVenda from "../negocio/cadastroVenda";
 import Listagem from "../negocio/listagem";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagemProdutos from "../negocio/listagemProdutos";
 import ListagemServicos from "../negocio/listagemServicos";
+import ListagemVendas from "../negocio/listagemVendas";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -31,6 +33,7 @@ while (execucao) {
             console.log(`2 - Cadastrar pet`);
             console.log(`3 - Cadastrar produto`);
             console.log(`4 - Cadastrar serviço`);
+            console.log(`5 - Cadastrar venda`);
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de cadastrar: `);
             let cadastro: Cadastro;
@@ -51,6 +54,9 @@ while (execucao) {
                     cadastro = new CadastroServico(empresa.getServicos)
                     cadastro.cadastrar()
                     break;
+                case 5:
+                    cadastro = new CadastroVenda(empresa.getClientes, empresa.getProdutos, empresa.getServicos, empresa.getVendas)
+                    cadastro.cadastrar()
                 case 0:
                     break;
                 default:
@@ -59,9 +65,10 @@ while (execucao) {
             break;
         case 2:
             console.log(`Opções:`);
-            console.log(`1 - Listar cliente`);
-            console.log(`2 - Listar produto`);
-            console.log(`3 - Listar serviço`);
+            console.log(`1 - Listar clientes`);
+            console.log(`2 - Listar produtos`);
+            console.log(`3 - Listar serviços`);
+            console.log(`3 - Listar vendas`);
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
             let listagem: Listagem;
@@ -76,6 +83,10 @@ while (execucao) {
                     break;
                 case 3:
                     listagem = new ListagemServicos(empresa.getServicos)
+                    listagem.listar()
+                    break;
+                case 4:
+                    listagem = new ListagemVendas(empresa.getVendas)
                     listagem.listar()
                     break;
                 case 0: 
