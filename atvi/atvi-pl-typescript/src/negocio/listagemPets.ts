@@ -8,7 +8,10 @@ export default class ListagemPets extends Listagem {
         this.pets = pets
     }
     public listar(): void {
-        console.log(`Pets:`);
+        process.stdout.write(`Pets: `);
+        if (this.pets.length == 0) {
+            console.log(`Nenhum pet cadastrado`); 
+        } else console.log('');
         this.pets.forEach(pet => {
             console.log(`\tId: ` + pet.getId);
             console.log(`\tNome: ` + pet.getNome);

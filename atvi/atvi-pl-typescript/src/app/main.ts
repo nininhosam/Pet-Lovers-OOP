@@ -1,13 +1,14 @@
-import { captureRejectionSymbol } from "events";
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
 import Cadastro from "../negocio/cadastro";
 import CadastroCliente from "../negocio/cadastroCliente";
 import CadastroPet from "../negocio/cadastroPet";
 import CadastroProduto from "../negocio/cadastroProduto";
+import CadastroServico from "../negocio/cadastroServico";
 import Listagem from "../negocio/listagem";
 import ListagemClientes from "../negocio/listagemClientes";
 import ListagemProdutos from "../negocio/listagemProdutos";
+import ListagemServicos from "../negocio/listagemServicos";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -46,6 +47,10 @@ while (execucao) {
                     cadastro = new CadastroProduto(empresa.getProdutos)
                     cadastro.cadastrar()
                     break;
+                case 4:
+                    cadastro = new CadastroServico(empresa.getServicos)
+                    cadastro.cadastrar()
+                    break;
                 case 0:
                     break;
                 default:
@@ -67,6 +72,10 @@ while (execucao) {
                     break;
                 case 2:
                     listagem = new ListagemProdutos(empresa.getProdutos)
+                    listagem.listar()
+                    break;
+                case 3:
+                    listagem = new ListagemServicos(empresa.getServicos)
                     listagem.listar()
                     break;
                 case 0: 
