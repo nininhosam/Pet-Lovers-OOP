@@ -1,4 +1,4 @@
-import Venda from "../modelo/venda";
+import Venda from "../../modelo/venda";
 import Listagem from "./listagem";
 import ListagemItens from "./listagemItens";
 

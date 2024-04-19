@@ -1,5 +1,5 @@
-import Entrada from "../io/entrada"
-import Servico from "../modelo/servico"
+import Entrada from "../../io/entrada"
+import Servico from "../../modelo/servico"
 import Cadastro from "./cadastro"
 
 export default class CadastroServico extends Cadastro {

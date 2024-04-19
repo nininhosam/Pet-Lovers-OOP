@@ -1,6 +1,6 @@
-import Item from "../modelo/item";
-import Pet from "../modelo/pet";
-import Produto from "../modelo/produto";
+import Item from "../../modelo/item";
+import Pet from "../../modelo/pet";
+import Produto from "../../modelo/produto";
 import Listagem from "./listagem";
 
 export default class ListagemItens extends Listagem {

@@ -63,6 +63,10 @@ export default class Cliente {
     public addPet(pet: Pet){
         this.pets.push(pet)
     }
+    public delPet(pet: Pet){
+        this.pets.splice(this.pets.indexOf(pet), 1)
+    
+    }
     public addProdutoConsumido(produto: Produto){
         this.produtosConsumidos.push(produto)
     }

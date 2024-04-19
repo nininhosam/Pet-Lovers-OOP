@@ -1,4 +1,4 @@
-import Cliente from "../modelo/cliente";
+import Cliente from "../../modelo/cliente";
 import Listagem from "./listagem";
 import ListagemPets from "./listagemPets";
 

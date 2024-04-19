@@ -1,9 +1,9 @@
-import Entrada from "../io/entrada"
-import Cliente from "../modelo/cliente"
-import Item from "../modelo/item"
-import Produto from "../modelo/produto"
-import Servico from "../modelo/servico"
-import Venda from "../modelo/venda"
+import Entrada from "../../io/entrada"
+import Cliente from "../../modelo/cliente"
+import Item from "../../modelo/item"
+import Produto from "../../modelo/produto"
+import Servico from "../../modelo/servico"
+import Venda from "../../modelo/venda"
 import Cadastro from "./cadastro"
 
 export default class CadastroVenda extends Cadastro {

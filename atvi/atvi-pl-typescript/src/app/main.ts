@@ -1,16 +1,22 @@
 import Entrada from "../io/entrada";
 import Empresa from "../modelo/empresa";
-import Cadastro from "../negocio/cadastro";
-import CadastroCliente from "../negocio/cadastroCliente";
-import CadastroPet from "../negocio/cadastroPet";
-import CadastroProduto from "../negocio/cadastroProduto";
-import CadastroServico from "../negocio/cadastroServico";
-import CadastroVenda from "../negocio/cadastroVenda";
-import Listagem from "../negocio/listagem";
-import ListagemClientes from "../negocio/listagemClientes";
-import ListagemProdutos from "../negocio/listagemProdutos";
-import ListagemServicos from "../negocio/listagemServicos";
-import ListagemVendas from "../negocio/listagemVendas";
+import Cadastro from "../negocio/Create/cadastro";
+import CadastroCliente from "../negocio/Create/cadastroCliente";
+import CadastroPet from "../negocio/Create/cadastroPet";
+import CadastroProduto from "../negocio/Create/cadastroProduto";
+import CadastroServico from "../negocio/Create/cadastroServico";
+import CadastroVenda from "../negocio/Create/cadastroVenda";
+import Deletar from "../negocio/Delete/deletar";
+import deletarClientes from "../negocio/Delete/deletarClientes";
+import deletarPet from "../negocio/Delete/deletarPet";
+import deletarProdutos from "../negocio/Delete/deletarProdutos";
+import deletarServicos from "../negocio/Delete/deletarServicos";
+import deletarVendas from "../negocio/Delete/deletarVendas";
+import Listagem from "../negocio/Read/listagem";
+import ListagemClientes from "../negocio/Read/listagemClientes";
+import ListagemProdutos from "../negocio/Read/listagemProdutos";
+import ListagemServicos from "../negocio/Read/listagemServicos";
+import ListagemVendas from "../negocio/Read/listagemVendas";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -20,6 +26,8 @@ while (execucao) {
     console.log(`Opções:`);
     console.log(`1 - Cadastrar algo`);
     console.log(`2 - Listar algo`);
+    console.log(`3 - Atualizar algo`);
+    console.log(`4 - Deletar algo`);
     console.log(`0 - Sair`);
 
     let entrada = new Entrada()
@@ -168,6 +176,53 @@ while (execucao) {
                     listagem.listar()
                     break;
                 case 0: 
+                    break;
+                default:
+                    console.log(`Operação não entendida :(`)
+            }
+            break;
+        case 3:
+            console.log()
+            console.log(`não implementado ainda :(`);
+            break;
+        case 4:
+            console.log(`Opções:`);
+            console.log(`1 - Deletar cliente`);
+            console.log(`2 - Deletar pet`);
+            console.log(`3 - Deletar produto`);
+            console.log(`4 - Deletar serviço`);
+            console.log(`5 - Deletar venda`);
+            console.log(`0 - Voltar`);
+            elemento = entrada.receberNumero(`Escolha o que gostaria de Deletar: `);
+            console.log(`\n\n\n`);
+            let deletar: Deletar;
+            let key: number;
+            switch (elemento) {
+                case 1:
+                    key = entrada.receberNumero(`Digite o CPF do cliente a ser deletado: `);
+                    deletar = new deletarClientes(empresa.getClientes)
+                    deletar.deletar(key)
+                    break;
+                case 2:
+                    key = entrada.receberNumero(`Digite o CPF do dono: `);
+                    deletar = new deletarPet(empresa.getClientes)
+                    deletar.deletar(key)
+                    break;
+                case 3:
+                    key = entrada.receberNumero(`Digite o ID do produto a ser deletado: `);
+                    deletar = new deletarProdutos(empresa.getProdutos)
+                    deletar.deletar(key)
+                    break;
+                case 4:
+                    key = entrada.receberNumero(`Digite o ID do servico a ser deletado: `);
+                    deletar = new deletarServicos(empresa.getServicos)
+                    deletar.deletar(key)
+                    break;
+                case 5:
+                    key = entrada.receberNumero(`Digite o ID da venda a ser deletada: `);
+                    deletar = new deletarVendas(empresa.getVendas)
+                    deletar.deletar(key)
+                case 0:
                     break;
                 default:
                     console.log(`Operação não entendida :(`)
