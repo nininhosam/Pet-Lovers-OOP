@@ -30,6 +30,18 @@ export default class Empresa{
         // cliente2.addPet(pet4)
         // cliente3.addPet(pet5)
         // this.clientes.push(cliente1, clienteX, cliente2, cliente3)
+        // let prod1 = new Produto("Ração pequena", 20)
+        // let prod2 = new Produto("Ração grande", 20)
+        // let prod3 = new Produto("Shampoo", 15)
+        // this.produtos.push(prod1, prod2, prod3);
+        // let serv1 = new Servico("Banho", 50)
+        // let serv2 = new Servico("Tosa", 80)
+        // let serv3 = new Servico("Vacina", 200)
+        // this.servicos.push(serv1, serv2, serv3);
+        // let venda1 = new Venda(cliente1, [{elemento: prod1, qty: 2}, {elemento: prod3, qty: 9}, {elemento: serv2, qty: 4}])
+        // let venda2 = new Venda(cliente2, [{elemento: prod2, qty: 3}])
+        // let venda3 = new Venda(cliente2, [{elemento: prod2, qty: 5}])
+        // this.vendas.push(venda1, venda2, venda3);
     }
     public get getClientes(){
         return this.clientes

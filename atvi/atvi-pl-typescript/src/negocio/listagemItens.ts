@@ -10,12 +10,12 @@ export default class ListagemItens extends Listagem {
         this.itens = itens
     }
     public listar(): void {
-        console.log(`Itens: `);
+        console.log(`\tItens: `);
         this.itens.forEach(item => {
             let tipoItem = item.elemento instanceof Produto ? 'Produto' : 'Servico';
-            console.log(`\t${tipoItem}: ` + item.elemento.nome);
-            console.log(`\tQuantidade: ` + item.qty);
-            console.log(`\t------------------------------`);
+            console.log(`\t\t${tipoItem}: ` + item.elemento.nome);
+            console.log(`\t\tQuantidade: ` + item.qty);
+            console.log(`\t\t------------------------------`);
         });
         console.log(`\n`);
     }

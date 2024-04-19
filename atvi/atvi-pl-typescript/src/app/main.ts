@@ -68,7 +68,7 @@ while (execucao) {
             console.log(`1 - Listar clientes`);
             console.log(`2 - Listar produtos`);
             console.log(`3 - Listar serviços`);
-            console.log(`3 - Listar vendas`);
+            console.log(`4 - Listar vendas`);
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
             let listagem: Listagem;

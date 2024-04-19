@@ -9,15 +9,14 @@ export default class ListagemVendas extends Listagem {
         this.vendas = vendas
     }
     public listar(): void {
-        console.log(`\tVendas: `);
+        console.log(`Vendas: `);
         this.vendas.forEach(venda => {
-            console.log(`\t\tId: ` + venda.id);
-            console.log(`\t\tNome do cliente: ` + venda.cliente.nome);
-            console.log(`\t\tItens: `);
+            console.log(`\tId: ` + venda.id);
+            console.log(`\tNome do cliente: ` + venda.cliente.nome);
             let listagem = new ListagemItens(venda.itens)
             listagem.listar()
             
-            console.log(`\t------------------------------`);
+            console.log(`------------------------------`);
         });
         console.log(`\n`);
     }
