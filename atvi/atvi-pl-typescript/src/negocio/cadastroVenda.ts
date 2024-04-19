@@ -26,12 +26,15 @@ export default class CadastroVenda extends Cadastro {
         console.log(`\nInício do cadastro de venda`);
         let adicionandoItens = true;
         let itens: Array<Item> = [];
+        
+        // Buscando cliente
         let cpfCliente = this.entrada.receberTexto(`Por favor informe o cpf do cliente: `)
         let cliente = this.clientes.find(cliente => cliente.getCpf.getValor == cpfCliente)
         if (cliente == undefined) {
             console.log(`Cliente não encontrado :(`)
             return
         }
+        // Adicionando itens
         while (adicionandoItens) {
             console.log(`Opções:`);
             console.log(`1 - Produto`);
@@ -56,7 +59,15 @@ export default class CadastroVenda extends Cadastro {
             };
             
         }
-        let venda = new Venda(cliente, itens);
+        // Associando pet
+        let petRefId = this.entrada.receberNumero(`Por favor informe o ID do pet associado a essa compra: `)
+        let petRef = cliente.getPets.find(pet => pet.getId == petRefId)
+        if (petRef == undefined) {
+            console.log(`Pet não encontrado :(`)
+            return
+        }
+        // Criando venda
+        let venda = new Venda(cliente, petRef, itens);
         this.vendas.push(venda)
         console.log(`\nCadastro concluído :)\n`);
     }

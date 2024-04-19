@@ -72,18 +72,90 @@ while (execucao) {
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
             let listagem: Listagem;
+            let listagemOrdenada;
+            let filtro: number;
             switch(elemento) {
                 case 1:
-                    listagem = new ListagemClientes(empresa.getClientes)
-                    listagem.listar()
+                    console.log(`Opções:`)
+                    console.log(`1 - Listar todos os clientes`)
+                    console.log(`2 - Listar os 10 clientes que mais consumiram (quantidade)`)
+                    console.log(`3 - Listar os 5 clientes que mais gastaram (R$)`)
+                    filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    switch (filtro){
+                        case 1:
+                            listagem = new ListagemClientes(empresa.getClientes)
+                            listagem.listar()
+                            break;
+                        case 2:
+                            listagemOrdenada = new ListagemClientes(empresa.getClientes)
+                            listagemOrdenada.listarTop10ConsumoQty()
+                            break;
+                        case 3:
+                            listagemOrdenada = new ListagemClientes(empresa.getClientes)
+                            listagemOrdenada.listarTop5ConsumoValor()
+                            break;
+                        default:
+                            console.log(`Operação não entendida :(`)
+                            break;
+                    }
                     break;
                 case 2:
-                    listagem = new ListagemProdutos(empresa.getProdutos)
-                    listagem.listar()
+                    console.log(`Opções:`)
+                    console.log(`1 - Listar produtos`)
+                    console.log(`2 - Listar produtos por consumo (quantidade)`)
+                    console.log(`3 - Listar produtos por consumo por tipo de animal`)
+                    console.log(`4 - Listar produtos por consumo por raça de animal`)
+                    filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    switch (filtro){
+                        case 1:
+                            listagem = new ListagemProdutos(empresa.getProdutos)
+                            listagem.listar()
+                            break;
+                        case 2:
+                            listagemOrdenada = new ListagemProdutos(empresa.getProdutos)
+                            listagemOrdenada.listarPorConsumoQty()
+                            break;
+                        case 3:
+                            listagemOrdenada = new ListagemProdutos(empresa.getProdutos)
+                            listagemOrdenada.listarPorConsumoTipo()
+                            break;
+                        case 4:
+                            listagemOrdenada = new ListagemProdutos(empresa.getProdutos)
+                            listagemOrdenada.listarPorConsumoRaca()
+                            break;
+                        default:
+                            console.log(`Operação não entendida :(`)
+                            break;
+                    }
                     break;
                 case 3:
-                    listagem = new ListagemServicos(empresa.getServicos)
-                    listagem.listar()
+                    console.log(`Opções:`)
+                    console.log(`1 - Listar serviços`)
+                    console.log(`2 - Listar serviços por consumo (quantidade)`)
+                    console.log(`3 - Listar serviços por consumo por tipo de animal`)
+                    console.log(`4 - Listar serviços por consumo por raça de animal`)
+                    filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    switch (filtro){
+                        case 1:
+                            listagem = new ListagemServicos(empresa.getServicos)
+                            listagem.listar()
+                            break;
+                        case 2:
+                            listagemOrdenada = new ListagemServicos(empresa.getServicos)
+                            listagemOrdenada.listarPorConsumoQty()
+                            break;
+                        case 3:
+                            listagemOrdenada = new ListagemServicos(empresa.getServicos)
+                            listagemOrdenada.listarPorConsumoTipo()
+                            break;
+                        case 4:
+                            listagemOrdenada = new ListagemServicos(empresa.getServicos)
+                            listagemOrdenada.listarPorConsumoRaca()
+                            break;
+                        default:
+                            console.log(`Operação não entendida :(`)
+                            break;
+                    }
                     break;
                 case 4:
                     listagem = new ListagemVendas(empresa.getVendas)

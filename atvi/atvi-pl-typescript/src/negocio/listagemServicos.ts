@@ -17,4 +17,27 @@ export default class ListagemServicos extends Listagem {
         });
         console.log(`\n`);
     }
+    
+    public listarPorConsumoQty(): void {
+        console.log(`\nLista de Serviços por consumo (quantidade):`);
+        let ServicosByQty = this.servicos.sort((a, b) => {
+            return b.consumoTotal - a.consumoTotal
+        })
+        ServicosByQty.forEach(servico => {
+            console.log(`Serviço #` + servico.id);
+            console.log(`Nome: ` + servico.nome);
+            console.log(`Preco: R$` + servico.preco);
+            console.log(`Unidades consumidas: ` + servico.consumoTotal);
+            console.log(`--------------------------------------`);
+        });
+        console.log(`\n`);
+    }
+    public listarPorConsumoTipo(): void {
+        // TODO
+        console.log(`Método não implementado :(`)
+    }
+    public listarPorConsumoRaca(): void {
+        // TODO
+        console.log(`Método não implementado :(`)
+    }
 }

@@ -44,6 +44,19 @@ export default class Cliente {
     public get getServicosConsumidos(): Array<Servico> {
         return this.servicosConsumidos
     }
+    public get getConsumoQty(): number {
+        return this.produtosConsumidos.length + this.servicosConsumidos.length;
+    }
+    public get getConsumoValor(): number {
+        let valor = 0;
+        this.produtosConsumidos.forEach(produto => {
+            valor += produto.preco;
+        });
+        this.servicosConsumidos.forEach(servico => {
+            valor += servico.preco;
+        });;
+        return valor;
+    }
     public get getPets(): Array<Pet>{
         return this.pets
     }

@@ -8,7 +8,8 @@ Requisítos funcionais:
 * CRUD - clientes e pets
 * CRUD - produtos/serviços
 * Registro do consumo de produto/serviço de cada cliente
-* Clientes por consumo de produto/serviço (quantidade)
+* Top 10 Clientes por consumo de produto/serviço (quantidade)
 * Produtos/Serviços por consumo
+* Produtos/Serviços por tipo
 * Produtos/Serviços por raça
-* Clientes por consumo de produto/serviço (valor)
+* Top 5 Clientes por consumo de produto/serviço (valor)

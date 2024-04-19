@@ -13,6 +13,7 @@ export default class ListagemVendas extends Listagem {
         this.vendas.forEach(venda => {
             console.log(`\tId: ` + venda.id);
             console.log(`\tNome do cliente: ` + venda.cliente.nome);
+            console.log(`\tPet referente: ` + venda.pet.getNome);
             let listagem = new ListagemItens(venda.itens)
             listagem.listar()
             
@@ -20,4 +21,5 @@ export default class ListagemVendas extends Listagem {
         });
         console.log(`\n`);
     }
+    
 }
