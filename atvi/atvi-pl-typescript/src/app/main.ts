@@ -24,6 +24,7 @@ while (execucao) {
 
     let entrada = new Entrada()
     let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+    console.log(`\n\n\n`);
     let elemento: number;
 
     switch (opcao) {
@@ -36,6 +37,7 @@ while (execucao) {
             console.log(`5 - Cadastrar venda`);
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de cadastrar: `);
+            console.log(`\n\n\n`);
             let cadastro: Cadastro;
             switch (elemento) {
                 case 1:
@@ -71,6 +73,7 @@ while (execucao) {
             console.log(`4 - Listar vendas`);
             console.log(`0 - Voltar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
+            console.log(`\n\n\n`);
             let listagem: Listagem;
             let listagemOrdenada;
             let filtro: number;
@@ -81,6 +84,7 @@ while (execucao) {
                     console.log(`2 - Listar os 10 clientes que mais consumiram (quantidade)`)
                     console.log(`3 - Listar os 5 clientes que mais gastaram (R$)`)
                     filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    console.log(`\n\n\n`);
                     switch (filtro){
                         case 1:
                             listagem = new ListagemClientes(empresa.getClientes)
@@ -106,6 +110,7 @@ while (execucao) {
                     console.log(`3 - Listar produtos por consumo por tipo de animal`)
                     console.log(`4 - Listar produtos por consumo por raça de animal`)
                     filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    console.log(`\n\n\n`);
                     switch (filtro){
                         case 1:
                             listagem = new ListagemProdutos(empresa.getProdutos)
@@ -135,6 +140,7 @@ while (execucao) {
                     console.log(`3 - Listar serviços por consumo por tipo de animal`)
                     console.log(`4 - Listar serviços por consumo por raça de animal`)
                     filtro = entrada.receberNumero(`Escolha uma opção: `)
+                    console.log(`\n\n\n`);
                     switch (filtro){
                         case 1:
                             listagem = new ListagemServicos(empresa.getServicos)
@@ -174,4 +180,5 @@ while (execucao) {
         default:
             console.log(`Operação não entendida :(`)
     }
+    console.log(`\n\n\n`);
 }
