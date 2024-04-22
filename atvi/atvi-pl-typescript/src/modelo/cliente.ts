@@ -73,4 +73,10 @@ export default class Cliente {
     public addServicoConsumido(servico: Servico){
         this.servicosConsumidos.push(servico)
     }
+    public deleteProdutoConsumido(produto: Produto){
+        this.produtosConsumidos.splice(this.produtosConsumidos.indexOf(produto), 1);
+    }
+    public deleteServicoConsumido(servico: Servico){
+        this.servicosConsumidos.splice(this.servicosConsumidos.indexOf(servico), 1);
+    }
 }
