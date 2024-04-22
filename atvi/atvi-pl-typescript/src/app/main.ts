@@ -210,12 +210,12 @@ while (execucao) {
                     break;
                 case 3:
                     key = entrada.receberNumero(`Digite o ID do produto a ser deletado: `);
-                    deletar = new deletarProdutos(empresa.getProdutos)
+                    deletar = new deletarProdutos(empresa.getVendas, empresa.getProdutos)
                     deletar.deletar(key)
                     break;
                 case 4:
                     key = entrada.receberNumero(`Digite o ID do servico a ser deletado: `);
-                    deletar = new deletarServicos(empresa.getServicos)
+                    deletar = new deletarServicos(empresa.getVendas, empresa.getServicos)
                     deletar.deletar(key)
                     break;
                 case 5:
