@@ -21,9 +21,16 @@ export default class CadastroPet extends Cadastro {
         }
         let nome = this.entrada.receberTexto(`Por favor informe o nome do pet: `)
         let raca = this.entrada.receberTexto(`Por favor informe a raça do pet: `)
-        let genero = this.entrada.receberTexto(`Por favor informe o genero do pet (M/F): `)
+        let genero;
+
+        let invalido = (genero: string) => genero != "M" && genero != "F"
+        do {
+            genero = this.entrada.receberTexto(`Por favor informe o gênero do pet (M/F): `).toUpperCase()
+            if (invalido(genero)) console.log("Gênero inválido")
+        } while (invalido(genero))
+    
         let tipo = this.entrada.receberTexto(`Por favor informe o tipo do pet: `)
-        let pet = new Pet(nome, raca, genero, tipo, dono.getCpf);
+        let pet = new Pet(nome, raca, genero as "M" | "F", tipo, dono.getCpf);
         dono.addPet(pet);
         console.log(`\nCadastro concluído :)\n`);
     }

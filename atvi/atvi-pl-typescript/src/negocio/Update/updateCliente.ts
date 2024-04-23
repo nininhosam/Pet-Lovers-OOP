@@ -5,7 +5,7 @@ import RG from "../../modelo/rg";
 import Telefone from "../../modelo/telefone";
 import Update from "./update";
 
-export default class UpdateClientes extends Update {
+export default class UpdateCliente extends Update {
     private clientes: Array<Cliente>
     private entrada: Entrada
     constructor(clientes: Array<Cliente>) {
@@ -21,6 +21,7 @@ export default class UpdateClientes extends Update {
             console.log(`\nCliente não encontrado :(`);
             return
         }
+        console.log(`\nOpções:`)
         console.log(`1 - Nome`)
         console.log(`2 - Nome Social`)
         console.log(`3 - CPF`)
@@ -63,7 +64,7 @@ export default class UpdateClientes extends Update {
                         let dataEmissao = new Date(ano, mes, dia)
                         cliente.getRgs.push(new RG(valor, dataEmissao))
                         break
-                    case 2:
+                    case 2: 
                         let delRg = this.entrada.receberTexto(`Por favor informe o número do rg a ser removido: `);
                         cliente.setRgs(cliente.getRgs.filter(rg => rg.getValor != delRg))
                         break
