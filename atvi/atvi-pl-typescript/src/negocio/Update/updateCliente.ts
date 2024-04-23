@@ -27,6 +27,7 @@ export default class UpdateCliente extends Update {
         console.log(`3 - CPF`)
         console.log(`4 - RG`)
         console.log(`5 - Telefones`)
+        console.log(`0 - Cancelar`)
         let opcao = this.entrada.receberNumero(`Por favor informe o que deseja atualizar: `)
         let opc2: number;
         switch (opcao) {
@@ -52,6 +53,7 @@ export default class UpdateCliente extends Update {
             case 4:
                 console.log(`1 - Adicionar RG`)
                 console.log(`2 - Remover RG`)
+                console.log(`0 - Cancelar`)
                 opc2 = this.entrada.receberNumero(`Por favor informe o que deseja fazer: `)
                 switch (opc2) {
                     case 1:
@@ -68,6 +70,8 @@ export default class UpdateCliente extends Update {
                         let delRg = this.entrada.receberTexto(`Por favor informe o número do rg a ser removido: `);
                         cliente.setRgs(cliente.getRgs.filter(rg => rg.getValor != delRg))
                         break
+                    case 0: 
+                        break;
                     default:
                         console.log("Opção inválida")
                         break
@@ -76,6 +80,7 @@ export default class UpdateCliente extends Update {
             case 5:
                 console.log(`1 - Adicionar telefone`)
                 console.log(`2 - Remover telefone`)
+                console.log(`0 - Cancelar`)
                 opc2 = this.entrada.receberNumero(`Por favor informe o que deseja fazer: `)
                 switch (opc2) {
                     case 1:
@@ -87,16 +92,20 @@ export default class UpdateCliente extends Update {
                         let delNumero = this.entrada.receberTexto(`Por favor informe o número do telefone a ser removido: `);
                         cliente.setTelefones(cliente.getTelefones.filter(telefone => telefone.getNumero != delNumero));
                         break
+                    case 0: 
+                        break;
                     default:
                         console.log("Opção inválida")
                         break
                 }
                 break
+            case 0: 
+                break;
             default:
                 console.log("Opção inválida")
                 break
         }
-        console.log(`\Atualização concluída :)\n`);
+        console.log(`\nAtualização concluída :)\n`);
 
         console.log(`\n`);
     }

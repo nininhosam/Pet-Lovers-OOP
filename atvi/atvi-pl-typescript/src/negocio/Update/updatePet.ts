@@ -34,6 +34,7 @@ export default class UpdatePet extends Update {
         console.log(`2 - Tipo`)
         console.log(`3 - Raça`)
         console.log(`4 - Genero`)
+        console.log(`0 - Cancelar`)
         let opcao = this.entrada.receberNumero(`Por favor informe o que deseja atualizar: `)
         switch (opcao) {
             case 1:
@@ -58,11 +59,13 @@ export default class UpdatePet extends Update {
                 
                 pet.setGenero(genero)
                 break
+            case 0: 
+                break;
             default:
                 console.log("Opção inválida")
                 break
         }
-        console.log(`\Atualização concluída :)\n`);
+        console.log(`\nAtualização concluída :)\n`);
 
         console.log(`\n`);
     }

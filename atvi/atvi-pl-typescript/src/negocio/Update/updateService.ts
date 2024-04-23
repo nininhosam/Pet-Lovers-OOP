@@ -15,12 +15,13 @@ export default class UpdateServico extends Update {
         let id = this.entrada.receberNumero(`Por favor informe o id do serviço a ser atualizado: `);
         let servico = this.servico.find(servico => servico.id == id)
         if (servico == null) {
-            console.log(`\serviço não encontrado :(`);
+            console.log(`\nServiço não encontrado :(`);
             return
         }
         console.log(`\nOpções:`)
         console.log(`1 - Nome`)
         console.log(`2 - Preço`)
+        console.log(`0 - Cancelar`)
         let opcao = this.entrada.receberNumero(`Por favor informe o que deseja atualizar: `)
         switch (opcao) {
             case 1:
@@ -31,11 +32,13 @@ export default class UpdateServico extends Update {
                 let preco = this.entrada.receberNumero(`Por favor informe o novo preço do serviço: `)
                 servico.preco = preco;
                 break
+            case 0: 
+                break;
             default:
                 console.log("Opção inválida")
                 break
         }
-        console.log(`\Atualização concluída :)\n`);
+        console.log(`\nAtualização concluída :)\n`);
 
         console.log(`\n`);
     }

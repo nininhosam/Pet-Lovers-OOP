@@ -22,6 +22,7 @@ import UpdateCliente from "../negocio/Update/updateCliente";
 import UpdatePet from "../negocio/Update/updatePet";
 import UpdateProduto from "../negocio/Update/updateProduto";
 import UpdateServico from "../negocio/Update/updateService";
+import UpdateVenda from "../negocio/Update/updateVenda";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -48,7 +49,7 @@ while (execucao) {
             console.log(`3 - Cadastrar produto`);
             console.log(`4 - Cadastrar serviço`);
             console.log(`5 - Cadastrar venda`);
-            console.log(`0 - Voltar`);
+            console.log(`0 - Cancelar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de cadastrar: `);
             console.log(`\n\n\n`);
             let cadastro: Cadastro;
@@ -72,10 +73,12 @@ while (execucao) {
                 case 5:
                     cadastro = new CadastroVenda(empresa.getClientes, empresa.getProdutos, empresa.getServicos, empresa.getVendas)
                     cadastro.cadastrar()
+                    break;
                 case 0:
                     break;
                 default:
                     console.log(`Operação não entendida :(`)
+                    break;
             }
             break;
         case 2:
@@ -84,13 +87,13 @@ while (execucao) {
             console.log(`2 - Listar produtos`);
             console.log(`3 - Listar serviços`);
             console.log(`4 - Listar vendas`);
-            console.log(`0 - Voltar`);
+            console.log(`0 - Cancelar`);
             elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
             console.log(`\n\n\n`);
             let listagem: Listagem;
             let listagemOrdenada;
             let filtro: number;
-            switch(elemento) {
+            switch (elemento) {
                 case 1:
                     console.log(`Opções:`)
                     console.log(`1 - Listar todos os clientes`)
@@ -111,6 +114,8 @@ while (execucao) {
                             listagemOrdenada = new ListagemClientes(empresa.getClientes)
                             listagemOrdenada.listarTop5ConsumoValor()
                             break;
+                        case 0:
+                            break;
                         default:
                             console.log(`Operação não entendida :(`)
                             break;
@@ -122,6 +127,7 @@ while (execucao) {
                     console.log(`2 - Listar produtos por consumo (quantidade)`)
                     console.log(`3 - Listar produtos por consumo por tipo de animal`)
                     console.log(`4 - Listar produtos por consumo por raça de animal`)
+                    console.log(`0 - Cancelar`)
                     filtro = entrada.receberNumero(`Escolha uma opção: `)
                     console.log(`\n\n\n`);
                     switch (filtro){
@@ -141,6 +147,8 @@ while (execucao) {
                             listagemOrdenada = new ListagemProdutos(empresa.getProdutos)
                             listagemOrdenada.listarPorConsumoRaca()
                             break;
+                        case 0:
+                            break;
                         default:
                             console.log(`Operação não entendida :(`)
                             break;
@@ -152,6 +160,7 @@ while (execucao) {
                     console.log(`2 - Listar serviços por consumo (quantidade)`)
                     console.log(`3 - Listar serviços por consumo por tipo de animal`)
                     console.log(`4 - Listar serviços por consumo por raça de animal`)
+                    console.log(`0 - Cancelar`)
                     filtro = entrada.receberNumero(`Escolha uma opção: `)
                     console.log(`\n\n\n`);
                     switch (filtro){
@@ -171,6 +180,8 @@ while (execucao) {
                             listagemOrdenada = new ListagemServicos(empresa.getServicos)
                             listagemOrdenada.listarPorConsumoRaca()
                             break;
+                        case 0:
+                            break;
                         default:
                             console.log(`Operação não entendida :(`)
                             break;
@@ -184,6 +195,7 @@ while (execucao) {
                     break;
                 default:
                     console.log(`Operação não entendida :(`)
+                    break;
             }
             break;
         case 3:
@@ -215,11 +227,14 @@ while (execucao) {
                     atualiza.update()
                     break;
                 case 5:
+                    atualiza = new UpdateVenda(empresa.getClientes, empresa.getProdutos, empresa.getServicos, empresa.getVendas)
+                    atualiza.update()
                     break;
                 case 0:
                     break
                 default:
                     console.log(`Operação não entendida :(`)
+                    break;
             }
             break;
         case 4:
@@ -229,7 +244,7 @@ while (execucao) {
             console.log(`3 - Deletar produto`);
             console.log(`4 - Deletar serviço`);
             console.log(`5 - Deletar venda`);
-            console.log(`0 - Voltar`);
+            console.log(`0 - Cancelar`)
             elemento = entrada.receberNumero(`Escolha o que gostaria de Deletar: `);
             console.log(`\n\n\n`);
             let deletar: Deletar;
@@ -259,10 +274,12 @@ while (execucao) {
                     key = entrada.receberNumero(`Digite o ID da venda a ser deletada: `);
                     deletar = new deletarVendas(empresa.getVendas)
                     deletar.deletar(key)
+                    break;
                 case 0:
                     break;
                 default:
                     console.log(`Operação não entendida :(`)
+                    break;
             }
             break;
         case 0:
@@ -271,6 +288,7 @@ while (execucao) {
             break;
         default:
             console.log(`Operação não entendida :(`)
+            break;
     }
     console.log(`\n\n\n`);
 }
