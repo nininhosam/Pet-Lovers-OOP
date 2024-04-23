@@ -20,6 +20,8 @@ import ListagemVendas from "../negocio/Read/listagemVendas";
 import Update from "../negocio/Update/update";
 import UpdateCliente from "../negocio/Update/updateCliente";
 import UpdatePet from "../negocio/Update/updatePet";
+import UpdateProduto from "../negocio/Update/updateProduto";
+import UpdateServico from "../negocio/Update/updateService";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -205,8 +207,12 @@ while (execucao) {
                     atualiza.update()
                     break;
                 case 3:
+                    atualiza = new UpdateProduto(empresa.getProdutos)
+                    atualiza.update()
                     break;
                 case 4:
+                    atualiza = new UpdateServico(empresa.getServicos)
+                    atualiza.update()
                     break;
                 case 5:
                     break;
