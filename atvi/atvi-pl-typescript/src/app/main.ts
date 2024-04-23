@@ -17,6 +17,8 @@ import ListagemClientes from "../negocio/Read/listagemClientes";
 import ListagemProdutos from "../negocio/Read/listagemProdutos";
 import ListagemServicos from "../negocio/Read/listagemServicos";
 import ListagemVendas from "../negocio/Read/listagemVendas";
+import Update from "../negocio/Update/update";
+import UpdateClientes from "../negocio/Update/updateClientes";
 
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
@@ -182,8 +184,31 @@ while (execucao) {
             }
             break;
         case 3:
-            console.log()
-            console.log(`não implementado ainda :(`);
+            console.log(`Opções:`);
+            console.log(`1 - Atualizar cliente`);
+            console.log(`2 - Atualizar produto`);
+            console.log(`3 - Atualizar serviço`);
+            console.log(`4 - Atualizar venda`);
+            console.log(`0 - Voltar`);
+            elemento = entrada.receberNumero(`Escolha o que gostaria de listar: `);
+            console.log(`\n\n\n`);
+            let atualiza: Update;
+            switch (elemento) {
+                case 1:
+                    atualiza = new UpdateClientes(empresa.getClientes)
+                    atualiza.update()
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    break
+                default:
+                    console.log(`Operação não entendida :(`)
+            }
             break;
         case 4:
             console.log(`Opções:`);

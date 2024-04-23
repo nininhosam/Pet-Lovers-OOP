@@ -29,14 +29,23 @@ export default class Cliente {
     public get getCpf(): CPF {
         return this.cpf
     }
+    public setCpf(cpf: CPF): void {
+        this.cpf = cpf
+    }
     public get getRgs(): Array<RG> {
         return this.rgs
+    }
+    public setRgs(rgs: Array<RG>): void {
+        this.rgs = rgs
     }
     public get getDataCadastro(): Date {
         return this.dataCadastro
     }
     public get getTelefones(): Array<Telefone> {
         return this.telefones
+    }
+    public setTelefones(tel: Array<Telefone>): void {
+        this.telefones = tel
     }
     public get getProdutosConsumidos(): Array<Produto> {
         return this.produtosConsumidos

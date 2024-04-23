@@ -1,3 +1,3 @@
-export default abstract class Atualizar {
-    public abstract atualizar(): void
+export default abstract class Update {
+    public abstract update(): void
 }
