@@ -1,0 +1,32 @@
+[
+    {
+        "nome": "João",
+        "nome social": "Afonso",
+        "cpf": "123.456.789-10"
+    },
+    {
+        "nome": "John Doe",
+        "nome social": "Maria",
+        "cpf": "123.456.789-11"
+    },
+    {
+        "nome": "Jane bane",
+        "nome social": "Jane",
+        "cpf": "123.456.789-12"
+    },
+    {
+        "nome": "Lily Allen",
+        "nome social": "Lily Allen",
+        "cpf": "123.456.789-13"
+    },
+    {
+        "nome": "Abby Smith",
+        "nome social": "Abby Smith",
+        "cpf": "123.456.789-14"
+    },
+    {
+        "nome": "Molly Brown",
+        "nome social": "Malu",
+        "cpf": "123.456.789-15"
+    }
+]

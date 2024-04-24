@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "cliente": {
+
+        },
+        "pet": {
+            "id": 1,
+            "nome": "Rex",
+            "raca": "Pastor Alemão"
+        },
+        "itens": [{}]
+    }
+]

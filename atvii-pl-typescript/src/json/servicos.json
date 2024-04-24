@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nome": "Tosa",
+        "preco": 30.00,
+        "consumoTotal": 0
+    }, 
+    {
+        "id": 2,
+        "nome": "Vacina V10",
+        "preco": 32.00,
+        "consumoTotal": 0
+    }, 
+    {
+        "id": 5,
+        "nome": "Banho",
+        "preco": 50.00,
+        "consumoTotal": 0
+    }
+]
