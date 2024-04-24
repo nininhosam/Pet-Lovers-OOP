@@ -1,7 +1,7 @@
 import { Component } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import ListaCliente from "./listaClientes";
-import FormularioCadastroCliente from "./formularioCadastroCliente";
+import FormularioCadastroCliente from "./formularioCadastro";
 import ListaProduto from "./listaProdutos";
 import ListaServico from "./listaServicos";
 
