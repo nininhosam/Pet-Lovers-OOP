@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component,  } from "react";
 import produtos from '../json/produtos.json'
+import { Produtos } from "../models/produtos";
 
 type props = {
     tema: string
 }
 type state = {
-    produtos: Array<any>
+    produtos: Produtos
 }
 
 export default class ListaProduto extends Component<props, state>{

@@ -1,5 +1,5 @@
 export interface CPF {
     valor: string
-    dataEmissao: Date
+    dataEmissao: string
 }
 export type CPFS = Array<CPF>;

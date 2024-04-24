@@ -6,6 +6,6 @@ export interface Pet {
     raca: string
     genero: string
     id: number
-    donoCPF: CPF;
+    donoCPF: string;
 }
 export type Pets = Array<Pet>;

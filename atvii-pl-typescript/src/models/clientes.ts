@@ -9,12 +9,12 @@ export interface Cliente {
     nome: string
     nomeSocial: string
     cpf: CPF
-    rgs: RGS
-    dataCadastro: Date
-    telefones: Telefones
-    produtosConsumidos: Produtos
-    servicosConsumidos: Servico
-    pets: Pets
+    rgs?: RGS
+    dataCadastro?: string
+    telefones?: Telefones
+    produtosConsumidos?: Produtos
+    servicosConsumidos?: Servico
+    pets?: Pets
 }
 
 export type Clientes = Array<Cliente>;

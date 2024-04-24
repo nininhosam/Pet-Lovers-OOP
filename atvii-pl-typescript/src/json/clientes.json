@@ -1,8 +1,8 @@
 [
     {
         "nome": "João",
-        "nome social": "Afonso",
-        "cpf": "123.456.789-10",
+        "nomeSocial": "Afonso",
+        "cpf": {"valor": "123.456.789-10", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": [{
             "id": 2,
             "nome": "Toto",
@@ -22,20 +22,20 @@
     },
     {
         "nome": "John Doe",
-        "nome social": "Maria",
-        "cpf": "123.456.789-11",
+        "nomeSocial": "Maria",
+        "cpf": {"valor": "123.456.789-11", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": []
     },
     {
         "nome": "Jane bane",
-        "nome social": "Jane",
-        "cpf": "123.456.789-12",
+        "nomeSocial": "Jane",
+        "cpf": {"valor": "123.456.789-12", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": []
     },
     {
         "nome": "Lily Allen",
-        "nome social": "Lily Allen",
-        "cpf": "123.456.789-13",
+        "nomeSocial": "Lily Allen",
+        "cpf": {"valor": "123.456.789-13", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": [{
             "id": 1,
             "nome": "Rex",
@@ -47,14 +47,14 @@
     },
     {
         "nome": "Abby Smith",
-        "nome social": "Abby Smith",
-        "cpf": "123.456.789-14",
+        "nomeSocial": "Abby Smith",
+        "cpf": {"valor": "123.456.789-14", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": []
     },
     {
         "nome": "Molly Brown",
-        "nome social": "Malu",
-        "cpf": "123.456.789-15",
+        "nomeSocial": "Malu",
+        "cpf": {"valor": "123.456.789-15", "dataEmissao": "2020-01-10T08:14:00"},
         "pets": []
     }
 ]

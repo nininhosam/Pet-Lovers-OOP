@@ -1,5 +1,5 @@
 export interface RG {
     valor: string
-    dataEmissao: Date
+    dataEmissao: string
 }
 export type RGS = Array<RG>;
