@@ -23,3 +23,8 @@ Pré-projeto em react 18.2.0 com Bootstrap 5.3.0 - Versões podem ser atualizada
 * Design responsívo 
 
 ## Atividade III
+Pré-projeto com as mesmas bibliotecas anteriores
+
+* Utilizar biblioteca react com componentes de função
+* Utilizar hooks
+* Reconstruir a mesma GUI feita anteriormente

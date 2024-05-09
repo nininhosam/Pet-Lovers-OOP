@@ -19,11 +19,26 @@ export default function Roteador() {
                     <ListaCliente tema="#e3f2fd" />
                 </>
             )
+        }  else if (this.state.tela === 'Produtos') {
+            return (
+                <>
+                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
+                    {/* <ListaProduto tema="#e3f2fd" /> */}
+                </>
+            )
+        
+        } else if (this.state.tela === 'Servicos') {
+            return (
+                <>
+                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
+                    {/* <ListaServico tema="#e3f2fd" /> */}
+                </>
+            )
         } else {
             return (
                 <>
-                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Cadastros']} />
-                    <FormularioCadastroCliente tema="#e3f2fd" />
+                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
+                    {/* <FormularioCadastro tema="#e3f2fd" /> */}
                 </>
             )
         }
