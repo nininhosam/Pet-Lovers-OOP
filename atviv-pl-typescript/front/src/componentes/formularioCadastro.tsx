@@ -3,9 +3,72 @@ import { Component } from "react";
 type props = {
     tema: string
 }
+type state = {
+    cliente: {
+        nome: string,
+        nomeSocial: string,
+        email: string,
+        endereco: null,
+        telefones: Array<any>,
+        links: Array<any>
+    }
+}
 
-export default class FormularioCadastro extends Component<props> {
-
+export default class FormularioCadastro extends Component<props, state> {
+    constructor(props: props) {
+        super(props)
+        this.state = {
+            cliente: {
+                nome: "",
+                nomeSocial: "",
+                email: "",
+                endereco: null,
+                telefones: [],
+                links: []
+            }
+        }
+        this.clientChange = this.clientChange.bind(this);
+        this.submitClient = this.submitClient.bind(this);
+    }
+    clientChange(e: React.ChangeEvent<HTMLInputElement>): void {
+        let name = e.target.name;
+        let value = e.target.value;
+        this.setState({
+            cliente: {
+                ...this.state.cliente,
+                [name]: value
+            }
+        })
+    }
+    submitClient(e: React.FormEvent<HTMLFormElement>): void{
+        e.preventDefault();
+        console.log(this.state.cliente)
+        fetch('http://localhost:32831/cliente/cadastrar', {
+            body: JSON.stringify({
+                nome: this.state.cliente.nome,
+                nomeSocial: this.state.cliente.nomeSocial,
+                email: this.state.cliente.email,
+                endereco: this.state.cliente.endereco,
+                telefones: this.state.cliente.telefones,
+                links: this.state.cliente.links
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST'
+        })
+        .then((res)=>{
+            this.setState({
+                cliente: {
+                    nome: "",
+                    nomeSocial: "",
+                    email: "",
+                    endereco: null,
+                    telefones: [],
+                    links: []
+                }
+        })})
+    }
     render() {
         let tema = this.props.tema
         return (
@@ -22,19 +85,19 @@ export default class FormularioCadastro extends Component<props> {
                     <div id="collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div className="accordion-body">
                             <div className="container-fluid">
-                                <form>
+                                <form onSubmit={this.submitClient}>
                                     <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
+                                        <input type="text" className="form-control" onChange={this.clientChange} name="nome" value={this.state.cliente.nome} placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                     </div>
                                     <div className="input-group mb-3">
-                                        <input type="text" className="form-control" placeholder="Nome social" aria-label="Nome social" aria-describedby="basic-addon1" />
+                                        <input type="text" className="form-control" onChange={this.clientChange} name="nomeSocial" value={this.state.cliente.nomeSocial}placeholder="Nome social" aria-label="Nome social" aria-describedby="basic-addon1" />
                                     </div>
                                     <div className="input-group mb-3">
                                         <span className="input-group-text" id="basic-addon1" style={{ background: tema }}>@</span>
-                                        <input type="text" className="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1" />
+                                        <input type="text" className="form-control" onChange={this.clientChange} name="email" value={this.state.cliente.email} placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1" />
                                     </div>
                                     <div className="input-group mb-3">
-                                        <button className="btn btn-outline-secondary" type="button" style={{ background: tema }}>Cadastrar</button>
+                                        <button className="btn btn-outline-secondary" type="submit" style={{ background: tema }}>Cadastrar</button>
                                     </div>
                                 </form>
                             </div>
@@ -122,14 +185,14 @@ export default class FormularioCadastro extends Component<props> {
 
                                     <div className="form-group">
                                         <label className="h5">Dados da venda</label>
-                                        <select className="form-control form-select form-select-lg mb-3" name="clientId" id="clientId" required>
-                                            <option disabled selected value="">Selecione um cliente</option>
+                                        <select className="form-control form-select form-select-lg mb-3" name="clientId" id="clientId" required defaultValue={""}>
+                                            <option value="" disabled>Selecione um cliente</option>
                                             <option value=""></option>
                                         </select>
                                     </div>
                                     <div className="form-group">
-                                        <select className="form-control form-select form-select-lg mb-3" name="clientId" id="clientId" required>
-                                            <option disabled selected value="">Selecione o pet</option>
+                                        <select className="form-control form-select form-select-lg mb-3" name="clientId" id="clientId" required defaultValue={""}>
+                                            <option value="" disabled>Selecione o pet</option>
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -138,8 +201,8 @@ export default class FormularioCadastro extends Component<props> {
 
                                     <div className="form-group mb-5">
                                         <div className="d-flex justify-content-between">
-                                            <select className="form-control form-select w-50 d-inline-block" name="productId" id="productId" required>
-                                                <option value="" selected disabled>Selecione um produto/serviço</option>
+                                            <select className="form-control form-select w-50 d-inline-block" name="productId" id="productId" required defaultValue={""}>
+                                                <option value="" disabled>Selecione um produto/serviço</option>
                                                 <option value="{{ productOption.id }}">R$ - Nome do Item</option>
                                             </select>
 
