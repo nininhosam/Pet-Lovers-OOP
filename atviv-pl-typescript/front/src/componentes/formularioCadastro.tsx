@@ -42,7 +42,6 @@ export default class FormularioCadastro extends Component<props, state> {
     }
     submitClient(e: React.FormEvent<HTMLFormElement>): void{
         e.preventDefault();
-        console.log(this.state.cliente)
         fetch('http://localhost:32831/cliente/cadastrar', {
             body: JSON.stringify({
                 nome: this.state.cliente.nome,

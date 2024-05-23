@@ -21,7 +21,6 @@ export default class Roteador extends Component<{}, state>{
 
     selecionarView(novaTela: string, evento: Event) {
         evento.preventDefault()
-        console.log(novaTela);
         this.setState({
             tela: novaTela
         })
