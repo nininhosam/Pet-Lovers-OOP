@@ -1,0 +1,26 @@
+[
+    {
+        "id": 3,
+        "nome": "Ração",
+        "preco": 5.00,
+        "consumoTotal": 0
+    }, 
+    {
+        "id": 4,
+        "nome": "Petisco",
+        "preco": 10.00,
+        "consumoTotal": 0
+    }, 
+    {
+        "id": 4,
+        "nome": "Ração Premium",
+        "preco": 10.00,
+        "consumoTotal": 0
+    }, 
+    {
+        "id": 5,
+        "nome": "Areia higiênica",
+        "preco": 50.00,
+        "consumoTotal": 0
+    }
+]

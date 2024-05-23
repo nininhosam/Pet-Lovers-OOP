@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import BarraNavegacao from "./barraNavegacao"
-import ListaCliente from "./listaCliente";
-import FormularioCadastroCliente from "./formularioCadastroCliente";
+import ListaClientes from "./listaClientes";
+import ListaProdutos from "./listaProdutos";
+import ListaServicos from "./listaServicos.js";
+import FormularioCadastro from "./formularioCadastro.js";
+import ListaVendas from "./listaVendas.js";
 
 export default function Roteador() {
     const [tela, setTela] = useState('Clientes')
@@ -12,33 +15,41 @@ export default function Roteador() {
     }
 
     const construirView = () => {
+        let barra = <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', "Vendas", 'Cadastros']} />
         if (tela === 'Clientes') {
             return (
                 <>
-                    <BarraNavegacao seletorView={selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Cadastros']} />
-                    <ListaCliente tema="#e3f2fd" />
+                    {barra}
+                    <ListaClientes/>
                 </>
             )
-        }  else if (this.state.tela === 'Produtos') {
+        }  else if (tela === 'Produtos') {
             return (
                 <>
-                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
-                    {/* <ListaProduto tema="#e3f2fd" /> */}
+                    {barra}
+                    <ListaProdutos/>
                 </>
             )
         
-        } else if (this.state.tela === 'Servicos') {
+        } else if (tela === 'Servicos') {
             return (
                 <>
-                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
-                    {/* <ListaServico tema="#e3f2fd" /> */}
+                    {barra}
+                    <ListaServicos/>
+                </>
+            )
+        } else if (tela === 'Vendas') {
+            return (
+                <>
+                    {barra}
+                    <ListaVendas/>
                 </>
             )
         } else {
             return (
                 <>
-                    <BarraNavegacao seletorView={this.selecionarView} tema="#e3f2fd" botoes={['Clientes', 'Produtos', 'Servicos', 'Cadastros']} />
-                    {/* <FormularioCadastro tema="#e3f2fd" /> */}
+                    {barra}
+                    <FormularioCadastro/>
                 </>
             )
         }
