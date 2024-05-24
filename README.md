@@ -2,7 +2,7 @@
  Projeto em Typescript da matéria de Programação Orientada à Objetos
 
 ## Atividade I
-Compuiter4Pet (C4P) - Desenvolver sistemas para atender, lojas de comercio eletronico, petshops e clinicas veterinarias
+Computer4Pet (C4P) - Desenvolver sistemas para atender, lojas de comercio eletronico, petshops e clinicas veterinarias
 Requisítos funcionais:
 
 * CRUD - clientes e pets

@@ -4,11 +4,13 @@ import '@/app/globals.css'
 import clientes from "../../../public/json/clientes.json";
 import { Table } from "flowbite-react";
 import ContentArea from '@/modules/content_area';
+import BarraDeNavegacao from '@/modules/barra_navegacao';
 
 export default function ListaClientes() {
 
     return (
         <main className='h-full min-h-dvh'>
+        <BarraDeNavegacao/>
         <ContentArea>
             <div className='w-full p-14'>
                 <div className='bg-slate-100 shadow-2xl rounded-sm py-6 px-6'>
