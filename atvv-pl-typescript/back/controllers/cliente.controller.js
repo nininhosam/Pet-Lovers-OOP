@@ -1,14 +1,15 @@
-const { Template } = require("../models");
+const { Cliente } = require("../models");
 class requestHandler {
   // POST
-  createTemplate = (req, res) => {
+  createCliente = (req, res) => {
     let { body } = req;
-    let template = {
-      name: body.name,
-      description: body.description,
+    let cliente = {
+      nome: body.nome,
+      nomeSocial: body.nomeSocial,
+      cpf: body.cpf,
     }
     
-    Template.create(template).then((response)=>{
+    Cliente.create(cliente).then((response)=>{
       res.status(201).send();
     }).catch((err) => {
       console.log(err);

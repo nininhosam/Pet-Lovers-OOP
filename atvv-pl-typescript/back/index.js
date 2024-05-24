@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use(express.json())
 
-app.use('/template', require('./routes/template.routes'));
+app.use('/cliente', require('./routes/cliente.routes'));
 
 db.sequelize.sync().then(()=>{
   app.listen(PORT, ()=>console.log(`Server running on https://localhost:${PORT}`));
