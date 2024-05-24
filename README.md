@@ -33,3 +33,10 @@ Pré-projeto com as mesmas bibliotecas anteriores
 Pré-projeto com arquitetura REST. possui apenas o CRUD de clientes, e 5 rotas no total na porta 32831.
 
 * Realizar a conexão entre a GUI feita na atviii e o backend disponibilizado no pré-projeto
+
+## Atividade V
+Sem pré-projeto.
+
+* Desenvolver um sistema web completo (front e back)
+* React obrigatório
+* Cumprir os requisítos da Atividade I
