@@ -18,7 +18,7 @@
             {
                 "elemento":
                     {
-                        "id": 4,
+                        "id": 2,
                         "nome": "Petisco",
                         "preco": 10.00,
                         "consumoTotal": 0
@@ -28,7 +28,7 @@
             {
                 "elemento":
                     {
-                        "id": 3,
+                        "id": 1,
                         "nome": "Ração",
                         "preco": 5.00,
                         "consumoTotal": 0
@@ -53,11 +53,11 @@
             "genero": "F",
             "donoCPF": "123.456.789-10"
         },
-        "items": [
+        "itens": [
             {
                 "elemento":
                     {
-                        "id": 4,
+                        "id": 3,
                         "nome": "Ração Premium",
                         "preco": 10.00,
                         "consumoTotal": 0
@@ -86,7 +86,7 @@
             {
                 "elemento":
                     {
-                        "id": 4,
+                        "id": 3,
                         "nome": "Ração Premium",
                         "preco": 10.00,
                         "consumoTotal": 0
